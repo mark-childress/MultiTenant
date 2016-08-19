@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using WebApp.Models;
+
 namespace WebApp.Migrations
 {
     using System;
@@ -15,6 +18,33 @@ namespace WebApp.Migrations
 
         protected override void Seed(WebApp.Models.MultiTenantContext context)
         {
+            var tenants = new List<Tenant>
+            {
+                new Tenant()
+                {
+                    Name = "SVCC",
+                    DomainName = "www.siliconvalley-codecamp.com",
+                    Id = 1,
+                    Default = true
+                },
+                new Tenant()
+                {
+                    Name = "ANGU",
+                    DomainName = "angularu.com",
+                    Id = 3,
+                    Default = false
+                },
+                new Tenant()
+                {
+                    Name = "CSSC",
+                    DomainName = "codestarssummit.com",
+                    Id = 2,
+                    Default = false
+                }
+            };
+            tenants.ForEach(a => context.Tenants.Add(a));
+            context.SaveChanges();
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

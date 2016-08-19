@@ -20,50 +20,9 @@ namespace WebApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //using (var context =new MultiTenantContext())
-            //{
-            //    context.Speakers.Add(new Speaker()
-            //    {
-            //        LastName = Guid.NewGuid().ToString()
-            //    });
-            //    context.Sessions.Add(new Session()
-            //    {
-            //        Title = Guid.NewGuid().ToString()
-            //    });
-            //    context.SaveChanges();
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new MultTenantViewEngine());
 
-            //}
-
-            //using (var context = new MultiTenantContext())
-            //{
-            //    var tenants = new List<Tenant>
-            //{
-            //    new Tenant()
-            //    {
-            //        Name = "SVCC",
-            //        DomainName = "www.siliconvalley-codemap.com",
-            //        Id = 1,
-            //        Default = true
-            //    },
-            //    new Tenant()
-            //    {
-            //        Name = "ANGU",
-            //        DomainName = "angularu.com",
-            //        Id = 3,
-            //        Default = false
-            //    },
-            //    new Tenant()
-            //    {
-            //        Name = "CSSC",
-            //        DomainName = "codestarsummit.com",
-            //        Id = 2,
-            //        Default = true
-            //    }
-            //};
-
-            //    context.Tenants.AddRange(tenants);
-            //    context.SaveChanges();
-            //}
         }
     }
 }

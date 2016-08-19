@@ -1,0 +1,25 @@
+﻿@using WebApp.Models
+@model List<WebApp.Models.Speaker>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Tit ties</title>
+</head>
+<body>
+    <div style="font-size: xx-large">
+        @foreach (var speaker in @Model)
+        {
+            <span>
+                @speaker.FirstName @speaker.LastName
+            </span>
+            <br />
+        }
+    </div>
+</body>
+</html>
