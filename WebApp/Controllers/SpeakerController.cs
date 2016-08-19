@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
 
@@ -12,7 +11,10 @@ namespace WebApp.Controllers
     public class SpeakerController : MultiTenantMvcController
     {
 
+
         private MultiTenantContext context = new MultiTenantContext();
+
+        [MultiTenantControllerAllow("svcc,angu,cscc")]
 
         public async Task<ActionResult> Index()
         {
@@ -46,6 +48,9 @@ namespace WebApp.Controllers
                         Bio = speaker.Bio,
                         AllowHtml = speaker.AllowHtml,
                         WebSite = speaker.WebSite,
+                        ImageUrl =
+                            $"/Content/Images/Speakers/Speaker-{speaker.PictureId}-75.jpg",
+
                         Sessions = 
                             speaker.Sessions.
                             Where(a => a.Tenant.Name == Tenant.Name).
@@ -54,7 +59,7 @@ namespace WebApp.Controllers
                 }
             }
 
-            return View("Index", speakers);
+            return View("Index","_Layout", speakers);
         }
 
     }

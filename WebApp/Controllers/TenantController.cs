@@ -11,6 +11,8 @@ namespace WebApp.Controllers
 {
     public class TenantController : MultiTenantMvcController
     {
+
+
         public async Task<ActionResult> Index()
         {
             using (var context = new MultiTenantContext())
