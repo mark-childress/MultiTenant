@@ -180,10 +180,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MultiTenantControllerAllowAttribute.cs" />
     <Compile Include="Controllers\MultiTenantMvcController.cs" />
+    <Compile Include="Controllers\NgRunController.cs" />
     <Compile Include="Controllers\SpeakerController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\TenantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ControllerWebApi\MultiTenantWebApiController.cs" />
+    <Compile Include="ControllerWebApi\SpeakerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +206,7 @@
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Speaker.cs" />
     <Compile Include="Models\Tenant.cs" />
+    <Compile Include="Models\Utils.cs" />
     <Compile Include="MultiTenantViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -210,6 +214,10 @@
     <Compile Include="TCacheInternal.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ANGU\ng\app.js" />
+    <Content Include="Content\ANGU\ng\favicon.ico" />
+    <Content Include="Content\ANGU\ng\index.html" />
+    <Content Include="Content\ANGU\ng\templates.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSSC\Images\bg_header.jpg" />
@@ -1269,10 +1277,26 @@
     <Content Include="Views\ANGU\Shared\_Layout.cshtml" />
     <Content Include="Views\SVCC\Shared\_Layout.cshtml" />
     <Content Include="Views\SVCC\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\SVCC\Speaker\Detail.cshtml" />
+    <Content Include="Views\SVCC\Session\Detail.cshtml" />
+    <Content Include="Views\SVCC\Session\Index.cshtml" />
+    <Content Include="Views\SVCC\Home\Index.cshtml" />
+    <Content Include="Views\CSSC\Home\CodeOfConduct.cshtml" />
+    <Content Include="Views\CSSC\Home\Index.cshtml" />
+    <Content Include="Views\CSSC\Session\Detail.cshtml" />
+    <Content Include="Views\CSSC\Shared\_Layout.cshtml" />
+    <Content Include="Views\CSSC\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\NgRun\Index.cshtml" />
     <None Include="Views\Tenant\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ANGU\ng\Content\fonts\sosa\" />
+    <Folder Include="Content\ANGU\ng\Content\images\social-buttons\" />
+    <Folder Include="Content\ANGU\ng\Content\images\speakers\" />
+    <Folder Include="Content\ANGU\ng\Content\images\tiles\" />
+    <Folder Include="Content\ANGU\ng\Content\styles\" />
+    <Folder Include="Content\ANGU\ng\Content\style\" />
     <Folder Include="Views\Speaker\" />
   </ItemGroup>
   <ItemGroup>
